@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px 0;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.product,
+.history {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 50%;
+}
+.error {
+  color: red;
+  font-weight: bold;
+}
+.history-item {
+  margin: 5px 0;
+  font-size: 14px;
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+.history-item:hover {
+  color: #0056b3;
+}
+.clear-button {
+  background-color: #ff4c4c;
+  margin-top: 10px;
+}
+.clear-button:hover {
+  background-color: #cc0000;
+}
