@@ -1,4 +1,4 @@
-const history = [] // Array para armazenar o histórico de buscas
+const history = [] 
 async function chamarApi(ean) {
   const URL = `https://painel.ongoldtech.com/api/tests/public/buscapreco?ean=${ean}`
 
@@ -8,12 +8,12 @@ async function chamarApi(ean) {
     if (respApi.status === 200) {
       const obj = await respApi.json()
       listarProduto(obj)
-      adicionarAoHistorico(ean) // Adiciona o código ao histórico
+      adicionarAoHistorico(ean) 
     } else {
       exibirErro('Produto não encontrado ou código EAN inválido.')
     }
   } catch (error) {
-    exibirErro('Erro ao buscar os dados. Verifique sua conexão com a internet.')
+    exibirErro('Erro ao buscar os dados.')
   }
 }
 
@@ -40,7 +40,7 @@ function exibirErro(mensagem) {
 
 function adicionarAoHistorico(ean) {
   if (!history.includes(ean)) {
-    history.push(ean) // Adiciona o código EAN ao histórico
+    history.push(ean) 
     atualizarHistorico()
   }
 }
@@ -69,11 +69,11 @@ function atualizarHistorico() {
 }
 
 function limparHistorico() {
-  history.length = 0 // Limpa o array de histórico
-  atualizarHistorico() // Atualiza a interface
+  history.length = 0 
+  atualizarHistorico() 
 }
 
-// Adiciona o evento ao botão de busca
+
 const searchButton = document.getElementById('searchButton')
 searchButton.addEventListener('click', () => {
   const eanInput = document.getElementById('eanInput')
@@ -92,6 +92,6 @@ eanInput.addEventListener('keydown', event => {
   }
 })
 
-// Adiciona o evento ao botão de limpar histórico
+
 const clearHistoryButton = document.getElementById('clearHistoryButton')
 clearHistoryButton.addEventListener('click', limparHistorico)
